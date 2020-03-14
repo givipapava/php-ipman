@@ -1,20 +1,23 @@
-<?php 
+<?php
 
 namespace GiviPapava\IPMan\components;
+
 use GeoIp2\Database\Reader;
 
-class IPLocation {
+class IPLocation
+{
 
     /**
      * @param $ip String
      * @return Object | Boolean
      */
-    public static function  getGeoDataLocation($ip) {
+    public static function  getGeoDataLocation($ip)
+    {
 
-         $reader = new Reader(dirname(__FILE__).'../../../data/GeoLite2-City.mmdb');
-         $record = $reader->city($ip);
-        if($record) {
-          return  json_encode( [
+        $reader = new Reader(dirname(__FILE__) . '../../../data/GeoLite2-City.mmdb');
+        $record = $reader->city($ip);
+        if ($record) {
+            return  json_encode([
                 "ip" => $ip,
                 "iso_code" => $record->country->isoCode,
                 "country" => $record->country->name,
@@ -33,25 +36,18 @@ class IPLocation {
      * @param $ip String
      * @return Object | Boolean
      */
-    public static function  getIPLatitureAndLongitute($ip) {
+    public static function  getIPLatitureAndLongitute($ip)
+    {
 
-        $reader = new Reader(dirname(__FILE__).'../../../data/GeoLite2-City.mmdb');
+        $reader = new Reader(dirname(__FILE__) . '../../../data/GeoLite2-City.mmdb');
         $record = $reader->city($ip);
-       if($record) {
-         return  json_encode( [
-               "ip" => $ip,
-               "longitude" => $record->location->longitude,
-               "network " => $record->traits->network
-           ]);
-       }
-       return false;
-   }
-
-
-
-
-
-
-
-
+        if ($record) {
+            return  json_encode([
+                "ip" => $ip,
+                "longitude" => $record->location->longitude,
+                "network " => $record->traits->network
+            ]);
+        }
+        return false;
+    }
 }

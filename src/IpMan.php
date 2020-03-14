@@ -143,7 +143,7 @@ class IPMan
     {
         return IP::getIpVersion($ip);
     }
- 
+
     /**
      * @Desc Get max prefix length
      * @Usage:
@@ -216,9 +216,9 @@ class IPMan
     }
 
     /**
-    * @desc Get location info by ip
-    * @example $ipMan->getIpLocation($ip)
-    * @result  [
+     * @desc Get location info by ip
+     * @example $ipMan->getIpLocation($ip)
+     * @result  [
                 "ip" => $ip,
                 "iso_code" =>  $iso_code,
                 "country"=> $country,
@@ -228,24 +228,24 @@ class IPMan
                 "longitude" =>  $longitude,
                 "network" => $network
     ];
-    * @param String $ip
-    * @return String | Object
-    */
+     * @param String $ip
+     * @return String | Object
+     */
     public function getIpLocation($ip)
     {
         return IPLocation::getGeoDataLocation($ip);
     }
 
     /**
-    * @desc Get location info by ip
-    * @example $ipMan->getIpLocation($ip)
-    * @result  [
+     * @desc Get location info by ip
+     * @example $ipMan->getIpLocation($ip)
+     * @result  [
                 "latitude" => $latitude,
                 "longitude" =>  $longitude,
     ];
-    * @param String $ip
-    * @return String | Object
-    */
+     * @param String $ip
+     * @return String | Object
+     */
     public function getIPLatitureAndLongitute($ip)
     {
         return IPLocation::getIPLatitureAndLongitute($ip);
@@ -281,8 +281,8 @@ class IPMan
 
     /**
      *   Usage:
-     *    $ipMan-> validNetMask('255.255.252.0');
-     *    $ipMan-> validNetMask('127.0.0.1');
+     *    $ipMan->validNetMask('255.255.252.0');
+     *    $ipMan->validNetMask('127.0.0.1');
      * Result:
      *     bool(true)
      *     bool(false)
@@ -296,7 +296,7 @@ class IPMan
 
     /**
      *   Usage:
-     *    $ipMan-> maskToCidr('255.255.252.0');
+     *    $ipMan->maskToCidr('255.255.252.0');
      * Result:
      *     int(22)
      * @patam String $netmask
