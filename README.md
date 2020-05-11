@@ -1,5 +1,11 @@
 # php-ipman
 Useful IP tools for php
+
+# Instalation
+```php
+ composer require givi/ipman
+```
+
 # Permissions
 
 Created By: Givi Papava   
@@ -10,7 +16,7 @@ Language: PHP <br>
 
 | Name | Version | Description | Date |
 | :---: | --- | --- | --- |
-| PHP ip tools | 1.0.0 | In development | 03-14-2020|
+| PHP ip tools | 1.0.0 | In Production | 03-14-2020|
 
 ## Usage
 ### IP
